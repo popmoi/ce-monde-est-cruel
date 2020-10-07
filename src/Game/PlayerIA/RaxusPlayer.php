@@ -41,17 +41,29 @@ class RaxusPlayer extends Player
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
 
+        sleep(1);
+        echo "test";
 
-        if ($this->result->getLastChoiceFor($this->mySide) == "rock"){
+
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "rock"){
           return parent::paperChoice();
         }
 
-        else if ($this->result->getLastChoiceFor($this->mySide) == "paper"){
+        if ($this->result->getLastChoiceFor($this->opponentSide) == "paper"){
           return parent::scissorsChoice();
         }
 
         else{
           return parent::rockChoice();
         }
+
+        // echo  $this->result->getStatsFor($this->mySide)[0];
+        // var_dump($this->result->getStatsFor($this->mySide));
+        // print_r ($name);
+
+
+        return parent::rockChoice();
+
+
     }
 };
