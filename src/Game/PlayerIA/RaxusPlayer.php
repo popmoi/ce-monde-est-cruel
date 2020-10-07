@@ -41,24 +41,37 @@ class RaxusPlayer extends Player
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
 
-        sleep(1);
+        // sleep(1);
         // echo "test";
 
 
-        if ($this->result->getLastChoiceFor($this->opponentSide) == "rock"){
+
+
+        if ($this->result->getStatsFor($this->mySide)["rock"] > $this->result->getStatsFor($this->mySide)["paper"] and $this->result->getStatsFor($this->mySide)["rock"] > $this->result->getStatsFor($this->mySide)["scissors"]){
+            return parent::paperChoice();
+        }
+
+        else if ($this->result->getStatsFor($this->mySide)["paper"] > $this->result->getStatsFor($this->mySide)["rock"] and $this->result->getStatsFor($this->mySide)["paper"] > $this->result->getStatsFor($this->mySide)["scissors"]){
+            return parent::scissorsChoice();
+        }
+
+        else if ($this->result->getStatsFor($this->mySide)["scissors"] > $this->result->getStatsFor($this->mySide)["rock"] and $this->result->getStatsFor($this->mySide)["scissors"] > $this->result->getStatsFor($this->mySide)["paper"]){
+            return parent::rockChoice();
+        }
+
+        else if ($this->result->getLastChoiceFor($this->opponentSide) == "rock"){
           return parent::paperChoice();
         }
 
-        if ($this->result->getLastChoiceFor($this->opponentSide) == "paper"){
+        else if ($this->result->getLastChoiceFor($this->opponentSide) == "paper"){
           return parent::scissorsChoice();
         }
 
-        else{
+        else {
           return parent::rockChoice();
         }
 
-        // echo  $this->result->getStatsFor($this->mySide)[0];
-        // var_dump($this->result->getStatsFor($this->mySide));
+        // var_dump($this->result->getStatsFor($this->mySide)["rock"] > 1);
         // print_r ($name);
 
 
