@@ -42,7 +42,7 @@ class RaxusPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
 
         sleep(1);
-        echo "test";
+        // echo "test";
 
 
         if ($this->result->getLastChoiceFor($this->opponentSide) == "rock"){
