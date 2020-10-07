@@ -42,7 +42,16 @@ class RaxusPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
 
 
-        return parent::rockChoice();
+        if ($this->result->getLastChoiceFor($this->mySide) == "rock"){
+          return parent::paperChoice();
+        }
 
+        else if ($this->result->getLastChoiceFor($this->mySide) == "paper"){
+          return parent::scissorsChoice();
+        }
+
+        else{
+          return parent::rockChoice();
+        }
     }
 };
