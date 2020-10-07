@@ -9,6 +9,13 @@ use Hackathon\Game\Result;
  * @package Hackathon\PlayerIA
  * @author Victor Seguin
  */
+
+/*
+J'ai voulu voir si mon adversaire faisait beaucoup de fois le même coup et le contrer dans ce cas là
+et sinon je regarde tout simplement son dernier coup et je joue celui qui peut le battre.
+
+*/
+
 class RaxusPlayer extends Player
 {
     protected $mySide;
