@@ -7,7 +7,7 @@ use Hackathon\Game\Result;
 /**
  * Class RaxusPlayers
  * @package Hackathon\PlayerIA
- * @author YOUR NAME HERE
+ * @author Victor Seguin
  */
 class RaxusPlayer extends Player
 {
